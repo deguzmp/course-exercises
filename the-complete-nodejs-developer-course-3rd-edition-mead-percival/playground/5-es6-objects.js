@@ -7,7 +7,7 @@ const user = {
   location: 'Bacoor'
 }
 
-console.log(user)
+// console.log(user)
 
 const product = {
   label: 'Red Notebook',
@@ -22,4 +22,12 @@ const { label:productLabel,
         rating = 5
       } = product
 
-console.log(productLabel,' ',stock,' ',rating)
+// console.log(productLabel,' ',stock,' ',rating)
+
+const transaction = (type, {label, stock = 0} = {}) => {
+  console.log(type, label, stock)
+}
+
+transaction('order',product)
+
+transaction('order')
