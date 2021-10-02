@@ -31,7 +31,7 @@ io.on('connection',(socket) => {
     cb()
   })
   
-  socket.on('sendLocation',({ username, coords }, cb) => {
+  socket.on('sendLocation',(coords, cb) => {
     const user = getUser(socket.id)
     io.emit('locationMessage', generateLocationMessage(user.username, coords))
     cb()
